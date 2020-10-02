@@ -8,38 +8,33 @@
             <p>Волгоградская область</p>
           </div>
           <div class="links">
-            <p><a href="">Тендеры</a></p>
-            <p><a href="">База подрядчиков</a></p>
-            <p><a href="">Другие сервисы</a></p>
-            <p>
-              <a href=""><img src=".\assets\Vector.svg" alt=""/></a>
-            </p>
+            <a href="">Тендеры</a>
+            <a href="">База подрядчиков</a>
+            <a href="">Другие сервисы</a>
+
+            <a href=""><img src=".\assets\Vector.svg" alt=""/></a>
           </div>
         </div>
         <div class="main">
           <img src=".\assets\Portal.svg" alt="" />
           <div class="catalog">
-            <div class="menu">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <a href=""><img src=".\assets\menu.svg" alt=""/></a>
             <p>Каталог</p>
           </div>
           <div class="search">
             <input
               type="text"
               placeholder="Хочу найти..."
-              autocomplete=""
+              autocomplete="off"
               v-model="productSearch"
               @input="filterproduct"
             />
             <img src=".\assets\search.svg" alt="" />
           </div>
-          <div class="list">
+          <button class="list">
             <img src=".\assets\list.svg" alt="" />
             <p>Список</p>
-          </div>
+          </button>
           <div class="elipse">
             <img src=".\assets\elipse.svg" alt="" />
           </div>
@@ -148,18 +143,8 @@ body {
         background: #fed83d;
         border-radius: 4px;
         margin-left: 24.11px;
-        .menu {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+        a {
           margin-left: 18.5px;
-          div {
-            margin: 1px;
-            height: 2px;
-            width: 15px;
-            background-color: black;
-            border-radius: 10px;
-          }
         }
         p {
           font-family: "Open Sans";
@@ -212,6 +197,7 @@ body {
         }
       }
       .list {
+        padding: 0px;
         display: flex;
         flex-direction: row;
         align-items: center;
