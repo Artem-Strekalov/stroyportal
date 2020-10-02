@@ -12,13 +12,13 @@
             <a href="">База подрядчиков</a>
             <a href="">Другие сервисы</a>
 
-            <a href=""><img src=".\assets\Vector.svg" alt=""/></a>
+            <a href=""><img src=".\assets\Vector.svg" alt="" /></a>
           </div>
         </div>
         <div class="main">
           <img src=".\assets\Portal.svg" alt="" />
           <div class="catalog">
-            <a href=""><img src=".\assets\menu.svg" alt=""/></a>
+            <a href=""><img src=".\assets\menu.svg" alt="" /></a>
             <p>Каталог</p>
           </div>
           <div class="search">
@@ -36,11 +36,11 @@
             <p>Список</p>
           </button>
           <div class="elipse">
-            <img src=".\assets\elipse.svg" alt="" />
+            <span>A</span>
           </div>
         </div>
         <div class="autocomplete" v-if="selectedProducts">
-          <ul>
+          <ul v-if="productSearch">
             <ol
               v-for="item in selectedProducts"
               :key="item"
@@ -223,7 +223,22 @@ body {
         }
       }
       .elipse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #9b51e0;
         margin-left: 24px;
+        span {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 24px;
+          color: #ffffff;
+        }
       }
     }
   }
