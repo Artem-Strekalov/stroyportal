@@ -1,82 +1,51 @@
 <template>
   <div id="app">
-    <div class="block">
-      <div class="content">
-        <div class="header">
-          <div class="location">
-            <img src=".\assets\location.svg" alt="" />
-            <p>Волгоградская область</p>
-          </div>
-          <div class="links">
-            <a href="">Тендеры</a>
-            <a href="">База подрядчиков</a>
-            <a href="">Другие сервисы</a>
-
-            <a href=""><img src=".\assets\Vector.svg" alt="" /></a>
-          </div>
+    <header>
+      <div class="block_1">
+      </div>
+      <div class="block_2"></div>
+      <div class="block_3"></div>
+    </header>
+    <hr />
+    <main>
+      <div class="left-panel">
+        <div class="left_1"></div>
+        <div class="left_2"></div>
+      </div>
+      <div class="main-content">
+        <div class="main_1"></div>
+        <div class="main_2">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="main">
-          <img src=".\assets\Portal.svg" alt="" />
-          <div class="catalog">
-            <a href=""><img src=".\assets\menu.svg" alt="" /></a>
-            <p>Каталог</p>
-          </div>
-          <div class="search">
-            <input
-              type="text"
-              placeholder="Хочу найти..."
-              autocomplete="off"
-              v-model="productSearch"
-              @input="filterproduct"
-            />
-            <img src=".\assets\search.svg" alt="" />
-          </div>
-          <button class="list">
-            <img src=".\assets\list.svg" alt="" />
-            <p>Список</p>
-          </button>
-          <div class="elipse">
-            <span>A</span>
-          </div>
+        <div class="main_3">
+          <div></div>
+          <div class="block"></div>
         </div>
-        <div class="autocomplete" v-if="selectedProducts">
-          <ul v-if="productSearch">
-            <ol
-              v-for="item in selectedProducts"
-              :key="item"
-              @click="setProduct(item)"
-            >
-              <p>{{ item }}</p>
-            </ol>
-          </ul>
+        <div class="main_4">
+          <div></div>
+          <div></div>
         </div>
       </div>
-    </div>
+    </main>
+    <hr />
+    <footer>
+      <div></div>
+      <div></div>
+      <div class="footer-content">
+        <div></div>
+        <div></div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
-  data() {
-    return {
-      productSearch: "",
-      product: ["Гвозди", "Молоток", "Пила", "Отвертка"],
-      selectedProducts: [],
-    };
-  },
-  methods: {
-    filterproduct() {
-      this.selectedProducts = this.product.filter((productSearch) => {
-        return productSearch
-          .toLowerCase()
-          .startsWith(this.productSearch.toLowerCase());
-      });
-    },
-    setProduct(item) {
-      this.productSearch = item;
-    },
-  },
 };
 </script>
 
@@ -84,185 +53,117 @@ export default {
 body {
   margin: 0px;
   padding: 0px;
-}
-.block {
   display: flex;
   justify-content: center;
-  .content {
+
+  header {
+    margin: 30px 0px 30px 0px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1095px;
-    .header {
+    justify-content: space-between;
+    width: 960px;
+    .block_1 {
+      width: 200px;
+      height: 50px;
+      background: #808080;
+    }
+    .block_2 {
+      background: #808080;
+      width: 300px;
+      height: 50px;
+    }
+    .block_3 {
+      background: #808080;
+      width: 400px;
+      height: 50px;
+    }
+  }
+  hr {
+    margin: 0px;
+    width: 960px;
+    background: black;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 0px 30px 0px;
+    .main-content {
+      margin-left: 30px;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 32px;
-      .location {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        p {
-          margin: 0px 0px 0px 12px;
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 20px;
-          color: #708598;
-        }
+      flex-direction: column;
+      justify-content: space-between;
+      .main_1 {
+        height: 150px;
+        width: 730px;
+        background: #c8c8c8;
       }
-      .links {
+      .main_2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 308.5px;
-        margin-left: 625px;
-        a {
-          text-decoration: none;
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 20px;
-          color: #708598;
+        div {
+          height: 70px;
+          width: 122px;
+          background: #c8c8c8;
+        }
+      }
+      .main_3 {
+        display: flex;
+        flex-direction: row;
+        div {
+          height: 70px;
+          width: 122px;
+          background: #c8c8c8;
+        }
+        .block {
+          margin-left: 30px;
+        }
+      }
+      .main_4 {
+        display: flex;
+        justify-content: space-between;
+        div {
+          height: 190px;
+          width: 350px;
+          background: #c8c8c8;
         }
       }
     }
-    .main {
+    .left-panel {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 76px;
-      .catalog {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 116px;
-        height: 40px;
-        background: #fed83d;
-        border-radius: 4px;
-        margin-left: 24.11px;
-        a {
-          margin-left: 18.5px;
-        }
-        p {
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 24px;
-          color: #050f19;
-          margin-left: 10.5px;
-        }
+      justify-content: space-between;
+      flex-direction: column;
+      height: 600px;
+      .left_1 {
+        width: 200px;
+        height: 230px;
+        background: #808080;
       }
-      .search {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 526px;
-        height: 40px;
-        background: #ffffff;
-        border: 1px solid #eceff1;
-        border-radius: 4px;
-        margin-left: 24px;
-        input {
-          height: 36px;
-          width: 450px;
-          margin-left: 14px;
-          outline: none;
-          border: none;
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 24px;
-          color: #708598;
-        }
-        ::-webkit-input-placeholder {
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 24px;
-          color: #708598;
-          opacity: 1;
-          transition: opacity 0.3s ease;
-        }
-        :focus::-webkit-input-placeholder {
-          color: transparent;
-        }
-        img {
-          margin-left: 14.17px;
-        }
-      }
-      .list {
-        padding: 0px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 111px;
-        height: 40px;
-        margin-left: 24px;
-        background: #fafbfc;
-        border: 1px solid #eceff1;
-        box-sizing: border-box;
-        border-radius: 4px;
-        img {
-          margin-left: 16px;
-          margin-bottom: 4px;
-        }
-        p {
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 24px;
-          color: #050f19;
-          margin-left: 12px;
-        }
-      }
-      .elipse {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #9b51e0;
-        margin-left: 24px;
-        span {
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 24px;
-          color: #ffffff;
-        }
+      .left_2 {
+        width: 200px;
+        height: 140px;
+        background: #808080;
       }
     }
   }
-  .autocomplete {
-    margin-left: 110px;
-    ul {
-      margin: 0px;
-      padding: 0px;
-      ol {
-        padding: 0px;
-        display: flex;
-        align-items: center;
-        height: 36px;
-        width: 450px;
-        background: #eceff1;
-        p {
-          margin: 0px 0px 0px 14px;
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 24px;
-          color: #708598;
-        }
+  footer {
+    margin: 30px 0px 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      width: 300px;
+      height: 130px;
+      background: #808080;
+    }
+    .footer-content {
+      background: none;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      div {
+        width: 300px;
+        height: 50px;
+        background: #808080;
       }
     }
   }
